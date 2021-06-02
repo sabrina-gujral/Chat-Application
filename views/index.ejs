@@ -9,14 +9,16 @@
       }
       body {
         font: 13px Helvetica, Arial;
+        background-color: #000;
+        color: #fff;
+
       }
       form {
-        background: #fff;
         padding: 3px;
         position: fixed;
         bottom: 0;
-        width: 100%;
-        border-color: #000;
+        width: 80%;
+        border-color: #fff;
         border-top-style: solid;
         border-top-width: 1px;
       }
@@ -44,7 +46,7 @@
         padding: 5px 10px;
       }
       #messages li:nth-child(odd) {
-        background: #eee;
+        background: rgb(58, 48, 48);
       }
       .container {
         margin: auto 150px;
@@ -79,11 +81,11 @@
       });
 
       socket.on("chat", function (msg) {
-        $("#messages").append($("<li>").html(msg));
+        $("#messages").append($("<li> ").html(msg));
       });
 
       socket.on("isOnline", function (username) {
-        $("#messages").append($("<li>").html(username));
+        $("#messages").append($("<li> ").html(username));
       });
 
       var username = prompt("Please tell me your name");
